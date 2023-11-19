@@ -8,6 +8,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
+    "plugin:import/recommended",
     "next",
     "prettier",
   ],
@@ -17,5 +18,31 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["@typescript-eslint", "react"],
-  rules: {},
+  rules: {
+    "import/order": [
+      "error",
+      {
+        alphabetize: {
+          caseInsensitive: false,
+          order: "asc",
+        },
+        pathGroups: [
+          {
+            pattern: "@/**",
+            group: "internal",
+            position: "after",
+          },
+        ],
+        groups: [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+        ],
+        "newlines-between": "always",
+      },
+    ],
+  },
 };
