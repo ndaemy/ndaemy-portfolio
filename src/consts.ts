@@ -2,13 +2,14 @@ import type { Site, Page, Links, Socials } from '@/types';
 
 // Global
 export const SITE: Site = {
-  TITLE: 'Astro Sphere',
+  TITLE: 'Ndaemy Blog',
   DESCRIPTION:
-    'Welcome to Astro Sphere, a portfolio and blog for designers and developers.',
-  AUTHOR: 'Mark Horn',
+    '프로덕트를 만들면서 쓰는 이런저런 글을 올리는 블로그입니다',
+  AUTHOR: 'ndaemy',
 };
 
 // Work Page
+// TODO: 추후에 Career 로 바꿀 예정
 export const WORK: Page = {
   TITLE: 'Work',
   DESCRIPTION: 'Places I have worked.',
@@ -17,13 +18,13 @@ export const WORK: Page = {
 // Blog Page
 export const BLOG: Page = {
   TITLE: 'Blog',
-  DESCRIPTION: 'Writing on topics I am passionate about.',
+  DESCRIPTION: '프로덕트를 만들면서 쓰는 이런저런 글을 올리는 블로그입니다',
 };
 
 // Projects Page
 export const PROJECTS: Page = {
   TITLE: 'Projects',
-  DESCRIPTION: 'Recent projects I have worked on.',
+  DESCRIPTION: '참여했던 프로젝트 리스트입니다',
 };
 
 // Search Page
@@ -57,25 +58,19 @@ export const SOCIALS: Socials = [
   {
     NAME: 'Email',
     ICON: 'email',
-    TEXT: 'markhorn.dev@gmail.com',
-    HREF: 'mailto:markhorn.dev@gmail.com',
+    TEXT: 'yuyaebean@gmail.com',
+    HREF: 'mailto:yuyaebean@gmail.com',
   },
   {
     NAME: 'Github',
     ICON: 'github',
-    TEXT: 'markhorn-dev',
-    HREF: 'https://github.com/markhorn-dev/astro-sphere',
+    TEXT: 'ndaemy',
+    HREF: 'https://github.com/ndaemy',
   },
   {
     NAME: 'LinkedIn',
     ICON: 'linkedin',
-    TEXT: 'markhorn-dev',
-    HREF: 'https://www.linkedin.com/in/markhorn-dev/',
-  },
-  {
-    NAME: 'Twitter',
-    ICON: 'twitter-x',
-    TEXT: 'markhorn_dev',
-    HREF: 'https://twitter.com/markhorn_dev',
+    TEXT: '유예빈',
+    HREF: 'https://www.linkedin.com/in/ndaemy/',
   },
 ];
