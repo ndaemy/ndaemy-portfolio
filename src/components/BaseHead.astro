@@ -32,6 +32,12 @@ const { title, description, image = '/open-graph.jpg' } = Astro.props;
   type="font/woff"
   crossorigin
 />
+<link
+  rel="stylesheet"
+  as="style"
+  crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+/>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -75,6 +81,7 @@ const { title, description, image = '/open-graph.jpg' } = Astro.props;
 
 <script>
   import type { TransitionBeforeSwapEvent } from 'astro:transitions/client';
+
   document.addEventListener('astro:before-swap', (e) =>
     [
       ...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll(
