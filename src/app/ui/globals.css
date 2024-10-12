@@ -8,4 +8,5 @@
 
 body {
   font-family: var(--font-pretendard), Arial, Helvetica, sans-serif;
+  word-break: keep-all;
 }
