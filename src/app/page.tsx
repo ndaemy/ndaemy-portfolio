@@ -1,5 +1,6 @@
-import { user } from "@/config";
 import Image from "next/image";
+
+import { user } from "@/config";
 
 export default function Home() {
   return (
