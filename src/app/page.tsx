@@ -4,13 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
 import { user } from "@/config";
+import BadgesWithTitle from "@/app/components/BadgesWithTitle";
 
 export default function Home() {
   return (
     <main>
-      <div className="flex justify-center pt-20">
-        <section className="mx-10 flex w-full max-w-screen-lg flex-col gap-4 md:mx-14">
-          <div className="metadata flex w-full justify-between">
+      <div className="mx-10 flex flex-col items-center gap-12 pt-20 *:w-full *:max-w-screen-lg md:mx-14">
+        <section id="portfolio-head" className="flex w-full flex-col gap-4">
+          <div id="metadata" className="flex justify-between">
             <div>
               <div>
                 <h1
@@ -55,6 +56,20 @@ export default function Home() {
           </div>
           <div id="bio" className="prose prose-xl max-w-full">
             {user.bio}
+          </div>
+        </section>
+        <section id="portfolio-body" className="flex flex-col">
+          <div className="flex flex-col gap-2.5">
+            <h2 className="prose prose-2xl font-bold">Skills</h2>
+            <div className="flex flex-col gap-2">
+              <BadgesWithTitle
+                title="Languages"
+                badges={user.skills.languages}
+              />
+              <BadgesWithTitle title="Frontend" badges={user.skills.frontend} />
+              <BadgesWithTitle title="Backend" badges={user.skills.backend} />
+              <BadgesWithTitle title="Etc" badges={user.skills.etc} />
+            </div>
           </div>
         </section>
       </div>

@@ -5,6 +5,19 @@ const user = {
   githubUsername: "ndaemy",
   avatar: "/images/avatar.jpg",
   bio: "서비스를 직접 만드는 것이 재미있어서 처음부터 끝까지 혼자서 만들 수 있는 기술을 가지기 위해 노력하는 개발자입니다. 열정 있는 사람들과 뭔가 하는 것에도 흥미가 있어 이런저런 활동도 많이 하는 사람입니다.",
+  skills: {
+    languages: ["JavaScript", "TypeScript"],
+    frontend: [
+      "React",
+      "Next.js",
+      "React Native",
+      "CSS-in-JS",
+      "Tailwind CSS",
+      "Storybook",
+    ],
+    backend: ["Node.js", "Express", "Koa", "Strapi", "Prisma", "PostgreSQL"],
+    etc: ["Git", "GitHub", "Vercel", "AWS", "Figma", "Google Analytics"],
+  },
 };
 
 export { user };
