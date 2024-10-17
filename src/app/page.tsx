@@ -3,8 +3,9 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
-import { user } from "@/config";
 import BadgesWithTitle from "@/app/components/BadgesWithTitle";
+import { user } from "@/config";
+import { capitalizeFirstLetter } from "@/utils";
 
 export default function Home() {
   return (
@@ -62,13 +63,13 @@ export default function Home() {
           <div className="flex flex-col gap-2.5">
             <h2 className="prose prose-2xl font-bold">Skills</h2>
             <div className="flex flex-col gap-2">
-              <BadgesWithTitle
-                title="Languages"
-                badges={user.skills.languages}
-              />
-              <BadgesWithTitle title="Frontend" badges={user.skills.frontend} />
-              <BadgesWithTitle title="Backend" badges={user.skills.backend} />
-              <BadgesWithTitle title="Etc" badges={user.skills.etc} />
+              {Object.keys(user.skills).map(key => (
+                <BadgesWithTitle
+                  key={key}
+                  title={capitalizeFirstLetter(key)}
+                  badges={user.skills[key as keyof typeof user.skills]}
+                />
+              ))}
             </div>
           </div>
         </section>
