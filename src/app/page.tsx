@@ -5,9 +5,13 @@ import Image from "next/image";
 
 import BadgesWithTitle from "@/app/components/BadgesWithTitle";
 import { user } from "@/resources";
+import { getCareers } from "@/resources/careers";
 import { capitalizeFirstLetter } from "@/utils";
 
 export default function Home() {
+  const careers = getCareers();
+  console.log(careers.map(c => c.metadata));
+
   return (
     <main>
       <div className="mx-10 flex flex-col items-center gap-12 pt-20 *:w-full *:max-w-screen-lg md:mx-14">
