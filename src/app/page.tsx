@@ -3,14 +3,13 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
-import BadgesWithTitle from "@/app/components/BadgesWithTitle";
+import { BadgesWithTitle, Careers } from "@/app/components";
 import { user } from "@/resources";
 import { getCareers } from "@/resources/careers";
 import { capitalizeFirstLetter } from "@/utils";
 
 export default function Home() {
   const careers = getCareers();
-  console.log(careers.map(c => c.metadata));
 
   return (
     <main>
@@ -64,16 +63,23 @@ export default function Home() {
           </div>
         </section>
         <section id="portfolio-body" className="flex flex-col">
-          <div className="flex flex-col gap-2.5">
-            <h2 className="prose prose-2xl font-bold">Skills</h2>
-            <div className="flex flex-col gap-2">
-              {Object.keys(user.skills).map(key => (
-                <BadgesWithTitle
-                  key={key}
-                  title={capitalizeFirstLetter(key)}
-                  badges={user.skills[key as keyof typeof user.skills]}
-                />
-              ))}
+          <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-2.5">
+              <h2 className="prose prose-2xl font-bold">Skills</h2>
+              <div className="flex flex-col gap-2">
+                {Object.keys(user.skills).map(key => (
+                  <BadgesWithTitle
+                    key={key}
+                    title={capitalizeFirstLetter(key)}
+                    badges={user.skills[key as keyof typeof user.skills]}
+                  />
+                ))}
+              </div>
+            </div>
+            <div>
+              <h2 className="prose prose-2xl font-bold">Careers</h2>
+              <div className="divider" />
+              <Careers careers={careers} />
             </div>
           </div>
         </section>
