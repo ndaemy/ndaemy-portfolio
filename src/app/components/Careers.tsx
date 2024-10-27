@@ -19,8 +19,15 @@ export default function Careers({ careers }: CareersProps) {
                 {career.startDate} - {career.endDate}
               </p>
             </div>
-            <div className="prose-p:mb-0.5 prose-p:mt-2 prose-ul:mt-0.5">
-              <MDXRemote source={career.description} />
+            <div className="leading-normal prose-p:my-2 prose-ul:mt-0.5 prose-li:my-1">
+              <MDXRemote
+                source={career.description}
+                components={{
+                  h4: ({ children }) => (
+                    <h4 className="first-of-type:mt-2">{children}</h4>
+                  ),
+                }}
+              />
             </div>
           </div>
         </li>
