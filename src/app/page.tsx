@@ -4,8 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
 import { BadgesWithTitle, Careers } from "@/app/components";
-import { user } from "@/resources";
-import { getCareers } from "@/resources/careers";
+import { getCareers, user } from "@/resources";
 import { capitalizeFirstLetter } from "@/utils";
 
 export default function Home() {
