@@ -20,7 +20,7 @@ export function getCareers(): Career[] {
   const sortedMdxData = sortBy(mdxData, [
     "metadata.startDate",
     "metadata.endDate",
-  ]);
+  ]).reverse();
 
   return sortedMdxData.map(({ metadata, slug, content }) => ({
     company: metadata.company,
