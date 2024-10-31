@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets-portfolio.ndaemy.dev",
+        pathname: "/**/*",
+      },
+    ],
+  },
+};
 
 export default nextConfig;

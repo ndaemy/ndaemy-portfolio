@@ -22,3 +22,4 @@ const user = {
 
 export { user };
 export * from "./careers";
+export * from "./projects";

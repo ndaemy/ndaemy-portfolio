@@ -9,7 +9,11 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      aspectRatio: {
+        og: "1.91 / 1",
+      },
+    },
   },
   plugins: [typography, daisyui],
   daisyui: {

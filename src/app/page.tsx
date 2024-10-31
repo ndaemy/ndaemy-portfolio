@@ -3,16 +3,17 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
-import { BadgesWithTitle, Careers } from "@/app/components";
-import { getCareers, user } from "@/resources";
+import { BadgesWithTitle, Careers, Projects } from "@/app/components";
+import { getCareers, getProjects, user } from "@/resources";
 import { capitalizeFirstLetter } from "@/utils";
 
 export default function Home() {
   const careers = getCareers();
+  const projects = getProjects();
 
   return (
     <main>
-      <div className="mx-10 flex flex-col items-center gap-12 pt-20 *:w-full *:max-w-screen-lg md:mx-14">
+      <div className="mx-10 flex flex-col items-center gap-12 py-20 *:w-full *:max-w-screen-lg md:mx-14">
         <section id="portfolio-head" className="flex w-full flex-col gap-2">
           <div id="metadata" className="flex justify-between">
             <div>
@@ -79,6 +80,11 @@ export default function Home() {
               <h2 className="prose prose-2xl font-bold">Careers</h2>
               <div className="divider" />
               <Careers careers={careers} />
+            </div>
+            <div>
+              <h2 className="prose prose-2xl font-bold">Projects</h2>
+              <div className="divider" />
+              <Projects projects={projects} />
             </div>
           </div>
         </section>
