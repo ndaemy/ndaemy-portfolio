@@ -3,13 +3,19 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
-import { BadgesWithTitle, Careers, Projects } from "@/app/components";
-import { getCareers, getProjects, user } from "@/resources";
+import {
+  Activities,
+  BadgesWithTitle,
+  Careers,
+  Projects,
+} from "@/app/components";
+import { getActivities, getCareers, getProjects, user } from "@/resources";
 import { capitalizeFirstLetter } from "@/utils";
 
 export default function Home() {
   const careers = getCareers();
   const projects = getProjects();
+  const activities = getActivities();
 
   return (
     <main>
@@ -85,6 +91,11 @@ export default function Home() {
               <h2 className="prose prose-2xl font-bold">Projects</h2>
               <div className="divider" />
               <Projects projects={projects} />
+            </div>
+            <div>
+              <h2 className="prose prose-2xl font-bold">Activities</h2>
+              <div className="divider" />
+              <Activities activities={activities} />
             </div>
           </div>
         </section>
