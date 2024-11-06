@@ -10,7 +10,7 @@ export default function Projects({ projects }: ProjectsProps) {
   return (
     <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
       {projects.map(project => (
-        <li key={project.slug} className="card shadow-xl">
+        <li key={project.slug} className="card bg-neutral shadow-xl">
           <figure className="relative aspect-og">
             <Image
               src={project.imageUrl}
@@ -20,8 +20,8 @@ export default function Projects({ projects }: ProjectsProps) {
               className="overflow-hidden object-cover"
             />
           </figure>
-          <div className="card-body">
-            <h3 className="card-title flex-wrap">
+          <div className="card-body flex flex-col gap-3">
+            <h3 className="card-title flex-wrap text-white">
               {project.name}
               {!project.endDate && (
                 <div className="badge badge-accent">진행중</div>
@@ -30,7 +30,7 @@ export default function Projects({ projects }: ProjectsProps) {
             <p>{project.description}</p>
             <div className="card-actions justify-end">
               {project.positions.map(position => (
-                <div key={position} className="badge badge-neutral">
+                <div key={position} className="badge badge-outline">
                   {position}
                 </div>
               ))}
