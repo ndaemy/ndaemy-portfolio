@@ -1,5 +1,6 @@
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
@@ -37,6 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark">
       <body className={`${pretendard.variable} antialiased`}>{children}</body>
+      <SpeedInsights />
     </html>
   );
 }

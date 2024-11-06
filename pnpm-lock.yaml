@@ -24,6 +24,9 @@ importers:
       '@fortawesome/react-fontawesome':
         specifier: ^0.2.2
         version: 0.2.2(@fortawesome/fontawesome-svg-core@6.6.0)(react@19.0.0-rc-02c0e824-20241028)
+      '@vercel/speed-insights':
+        specifier: ^1.0.14
+        version: 1.0.14(next@15.0.2(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028)
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
@@ -494,6 +497,29 @@ packages:
 
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
+
+  '@vercel/speed-insights@1.0.14':
+    resolution: {integrity: sha512-env1BkPddz1UaEZwBL4GmfRksMi2LbiYaKuoxMQjfLk83aEh7kkWMukkUhpQVs717NE6nnD+1+KO85GZHOZ4nQ==}
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -2800,6 +2826,11 @@ snapshots:
       eslint-visitor-keys: 3.4.3
 
   '@ungap/structured-clone@1.2.0': {}
+
+  '@vercel/speed-insights@1.0.14(next@15.0.2(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028)':
+    optionalDependencies:
+      next: 15.0.2(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028)
+      react: 19.0.0-rc-02c0e824-20241028
 
   acorn-jsx@5.3.2(acorn@8.12.1):
     dependencies:
