@@ -11,11 +11,12 @@ export default function Projects({ projects }: ProjectsProps) {
     <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
       {projects.map(project => (
         <li key={project.slug} className="card shadow-xl">
-          <figure className="aspect-og relative">
+          <figure className="relative aspect-og">
             <Image
               src={project.imageUrl}
               alt={`${project.name} Image`}
               fill
+              sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
               className="overflow-hidden object-cover"
             />
           </figure>
