@@ -3,12 +3,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
-import {
-  Activities,
-  BadgesWithTitle,
-  Careers,
-  Projects,
-} from "@/app/components";
+import { Activities, BadgesWithTitle, Careers, Projects } from "@/components";
 import { getActivities, getCareers, getProjects, user } from "@/resources";
 import { capitalizeFirstLetter } from "@/utils";
 
