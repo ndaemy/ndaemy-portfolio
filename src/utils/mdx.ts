@@ -28,7 +28,7 @@ function readMDXFile(filePath: PathLike) {
  * Get all MDX data in a directory
  * @param dir The directory to search for MDX files
  */
-export function getMDXData(dir: string) {
+export function getMDXDataInDir(dir: string) {
   const mdxFiles = getMDXFilenames(dir);
 
   return mdxFiles.map(file => {

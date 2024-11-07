@@ -2,7 +2,7 @@ import sortBy from "lodash/sortBy";
 import { fileURLToPath } from "node:url";
 import path from "path";
 
-import { getMDXData } from "@/utils/mdx";
+import { getMDXDataInDir } from "@/utils";
 
 export interface Activity {
   title: string;
@@ -13,7 +13,7 @@ export interface Activity {
 
 export function getActivities(): Activity[] {
   const dir = path.dirname(fileURLToPath(import.meta.url));
-  const mdxData = getMDXData(dir);
+  const mdxData = getMDXDataInDir(dir);
   const sortedMdxData = sortBy(mdxData, ["metadata.order"]);
 
   return sortedMdxData.map(({ metadata, slug, content }) => ({

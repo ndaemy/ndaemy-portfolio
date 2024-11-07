@@ -2,7 +2,7 @@ import sortBy from "lodash/sortBy";
 import { fileURLToPath } from "node:url";
 import path from "path";
 
-import { getMDXData } from "@/utils/mdx";
+import { getMDXDataInDir } from "@/utils";
 
 export interface Project {
   name: string;
@@ -19,7 +19,7 @@ export interface Project {
 
 export function getProjects(): Project[] {
   const dir = path.dirname(fileURLToPath(import.meta.url));
-  const mdxData = getMDXData(dir);
+  const mdxData = getMDXDataInDir(dir);
   const sortedMdxData = sortBy(mdxData, [
     "metadata.startDate",
     "metadata.endDate",
