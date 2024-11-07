@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="mx-10 flex flex-col items-center gap-12 py-20 *:w-full *:max-w-screen-lg md:mx-14">
+      <div className="flex flex-col gap-12">
         <section id="portfolio-head" className="flex w-full flex-col gap-2">
           <div id="metadata" className="flex justify-between">
             <div>

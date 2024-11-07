@@ -39,7 +39,9 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark">
       <body className={`${pretendard.variable} antialiased`}>
-        {children}
+        <div className="mx-10 flex flex-col items-center py-20 *:w-full *:max-w-screen-lg md:mx-14">
+          {children}
+        </div>
         <SpeedInsights />
       </body>
       <Analytics />
