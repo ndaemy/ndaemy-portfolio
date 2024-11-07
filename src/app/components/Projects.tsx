@@ -10,7 +10,10 @@ export default function Projects({ projects }: ProjectsProps) {
   return (
     <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
       {projects.map(project => (
-        <li key={project.slug} className="card bg-neutral shadow-xl">
+        <li
+          key={project.slug}
+          className="card bg-[oklch(27.4%_0.018_251.71)] shadow-xl"
+        >
           <figure className="relative aspect-og">
             <Image
               src={project.imageUrl}
@@ -28,7 +31,7 @@ export default function Projects({ projects }: ProjectsProps) {
               )}
             </h3>
             <p>{project.description}</p>
-            <div className="card-actions justify-end">
+            <div className="card-actions justify-end pt-2">
               {project.positions.map(position => (
                 <div key={position} className="badge badge-outline">
                   {position}
