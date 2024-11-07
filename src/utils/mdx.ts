@@ -2,6 +2,13 @@ import fs, { type PathLike } from "fs";
 import matter from "gray-matter";
 import path from "path";
 
+interface MDXData {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  metadata: { [key: string]: any };
+  slug: string;
+  content: string;
+}
+
 /**
  * Get all MDX filenames in a directory
  *
@@ -26,9 +33,9 @@ function readMDXFile(filePath: PathLike) {
 
 /**
  * Get all MDX data in a directory
- * @param dir The directory to search for MDX files
+ * @param dir The directory to search for MDX files. e.g. "/Users/username/content"
  */
-export function getMDXDataInDir(dir: string) {
+export function getMDXDataInDir(dir: string): MDXData[] {
   const mdxFiles = getMDXFilenames(dir);
 
   return mdxFiles.map(file => {
@@ -41,4 +48,19 @@ export function getMDXDataInDir(dir: string) {
       content,
     };
   });
+}
+
+/**
+ * Get MDX data from a single file
+ * @param filePath The path to the MDX file. e.g. "/Users/username/content/file1.mdx"
+ */
+export function getMDXDataFromFile(filePath: string): MDXData {
+  const { data, content } = readMDXFile(filePath);
+  const slug = path.basename(filePath, path.extname(filePath));
+
+  return {
+    metadata: data,
+    slug,
+    content,
+  };
 }

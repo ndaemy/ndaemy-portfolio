@@ -2,7 +2,7 @@ import sortBy from "lodash/sortBy";
 import { fileURLToPath } from "node:url";
 import path from "path";
 
-import { getMDXDataInDir } from "@/utils";
+import { getMDXDataFromFile, getMDXDataInDir } from "@/utils";
 
 export interface Project {
   name: string;
@@ -37,4 +37,23 @@ export function getProjects(): Project[] {
     imageUrl: metadata.imageUrl,
     content,
   }));
+}
+
+export function getProject(slug: string): Project {
+  const dir = path.dirname(fileURLToPath(import.meta.url));
+  const filePath = path.join(dir, `${slug}.mdx`);
+  const { metadata, content } = getMDXDataFromFile(filePath);
+
+  return {
+    name: metadata.name,
+    slug,
+    description: metadata.description,
+    technologies: metadata.technologies,
+    positions: metadata.positions,
+    startDate: metadata.startDate,
+    endDate: metadata.endDate,
+    demoUrl: metadata.demoUrl,
+    imageUrl: metadata.imageUrl,
+    content,
+  };
 }
