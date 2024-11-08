@@ -16,7 +16,7 @@ export default function Projects({ projects }: ProjectsProps) {
             <div className="card bg-[oklch(27.4%_0.018_251.71)] shadow-xl transition hover:scale-105">
               <figure className="relative aspect-og">
                 <Image
-                  src={project.imageUrl}
+                  src={project.thumbnailImage}
                   alt={`${project.name} Image`}
                   fill
                   sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
