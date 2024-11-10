@@ -14,6 +14,7 @@ export interface Project {
   endDate?: string;
   demoUrl?: string;
   thumbnailImage: string;
+  images?: string[];
   content: string;
 }
 
@@ -35,6 +36,7 @@ export function getProjects(): Project[] {
     endDate: metadata.endDate,
     demoUrl: metadata.demoUrl,
     thumbnailImage: metadata.thumbnailImage,
+    images: metadata.images,
     content,
   }));
 }
@@ -54,6 +56,7 @@ export function getProject(slug: string): Project {
     endDate: metadata.endDate,
     demoUrl: metadata.demoUrl,
     thumbnailImage: metadata.thumbnailImage,
+    images: metadata.images,
     content,
   };
 }

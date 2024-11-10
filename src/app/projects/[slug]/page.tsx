@@ -1,3 +1,6 @@
+import { MDXRemote } from "next-mdx-remote/rsc";
+
+import Carousel from "@/components/Carousel";
 import { getProject, getProjects } from "@/resources";
 
 export async function generateStaticParams() {
@@ -16,5 +19,12 @@ export default async function Project({
   const slug = (await params).slug;
   const project = getProject(slug);
 
-  return <>Project Detail Page: {project.name}</>;
+  return (
+    <main className="prose flex flex-col items-center">
+      {project.images && (
+        <Carousel imageUrls={project.images} className="not-prose h-96 w-3/4" />
+      )}
+      <MDXRemote source={project.content} />
+    </main>
+  );
 }
