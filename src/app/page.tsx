@@ -54,7 +54,7 @@ export default function Home() {
               id="avatar"
               src={user.avatar}
               alt="avatar"
-              className="h-40 w-40 rounded-full"
+              className="size-40 rounded-full"
               width={160}
               height={160}
             />

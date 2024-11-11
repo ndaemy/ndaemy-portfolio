@@ -13,7 +13,7 @@ export default function Carousel({ imageUrls, className }: CarouselProps) {
       {imageUrls.map((imageUrl, index) => (
         <div
           key={imageUrl}
-          className="carousel-item relative h-full w-full bg-black"
+          className="carousel-item relative size-full bg-black"
         >
           <Image
             src={imageUrl}

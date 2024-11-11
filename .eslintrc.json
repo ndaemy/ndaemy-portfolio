@@ -8,6 +8,7 @@
     "next/core-web-vitals",
     "next/typescript",
     "plugin:import/recommended",
+    "plugin:tailwindcss/recommended",
     "prettier"
   ],
   "rules": {
@@ -33,6 +34,8 @@
           }
         ]
       }
-    ]
+    ],
+    "tailwindcss/enforces-negative-arbitrary-values": "error",
+    "tailwindcss/enforces-shorthand": "error"
   }
 }
