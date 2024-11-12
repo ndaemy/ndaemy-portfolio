@@ -1,6 +1,6 @@
 export const user = {
   name: "유예빈",
-  jobTitle: "서비스 개발자",
+  jobTitle: "풀스택 · 프론트엔드 개발자",
   email: "yuyaebean@gmail.com",
   githubUsername: "ndaemy",
   avatar: "/images/avatar.jpg",
