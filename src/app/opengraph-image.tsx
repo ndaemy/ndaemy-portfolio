@@ -2,8 +2,6 @@ import { ImageResponse } from "next/og";
 
 import { user } from "@/resources/user";
 
-export const runtime = "edge";
-
 export const alt = `${user.name} 포트폴리오`;
 export const size = {
   width: 1200,
@@ -15,10 +13,10 @@ export const contentType = "image/png";
 // Image generation
 export default async function Image() {
   const SUITMedium = fetch(
-    new URL("./fonts/SUIT-Medium.otf", import.meta.url),
+    "https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/otf/SUIT-Medium.otf",
   ).then(res => res.arrayBuffer());
   const SUITBold = fetch(
-    new URL("./fonts/SUIT-Bold.otf", import.meta.url),
+    "https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/otf/SUIT-Bold.otf",
   ).then(res => res.arrayBuffer());
 
   return new ImageResponse(
@@ -36,7 +34,6 @@ export default async function Image() {
         }}
       >
         <img
-          id="avatar"
           src="https://assets-portfolio.ndaemy.dev/avatar/low.jpg"
           alt="avatar"
           width={240}
