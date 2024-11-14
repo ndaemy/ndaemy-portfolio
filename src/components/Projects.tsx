@@ -26,8 +26,11 @@ export default function Projects({ projects }: ProjectsProps) {
               <div className="card-body flex flex-col gap-3">
                 <h3 className="card-title flex-wrap text-white">
                   {project.name}
+                  {project.type === "Idea" && (
+                    <div className="badge badge-neutral">Idea only</div>
+                  )}
                   {!project.endDate && (
-                    <div className="badge badge-accent">진행중</div>
+                    <div className="badge badge-accent">Ongoing</div>
                   )}
                 </h3>
                 <p>{project.description}</p>

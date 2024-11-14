@@ -8,7 +8,8 @@ export interface Project {
   name: string;
   slug: string;
   description: string;
-  technologies: string[];
+  type: "Development" | "Idea";
+  technologies?: string[];
   positions: string[];
   startDate: string;
   endDate?: string;
@@ -22,14 +23,15 @@ export function getProjects(): Project[] {
   const dir = path.dirname(fileURLToPath(import.meta.url));
   const mdxData = getMDXDataInDir(dir);
   const sortedMdxData = sortBy(mdxData, [
-    "metadata.startDate",
     "metadata.endDate",
+    "metadata.startDate",
   ]).reverse();
 
   return sortedMdxData.map(({ metadata, slug, content }) => ({
     name: metadata.name,
     slug,
     description: metadata.description,
+    type: metadata.type,
     technologies: metadata.technologies,
     positions: metadata.positions,
     startDate: metadata.startDate,
@@ -50,6 +52,7 @@ export function getProject(slug: string): Project {
     name: metadata.name,
     slug,
     description: metadata.description,
+    type: metadata.type,
     technologies: metadata.technologies,
     positions: metadata.positions,
     startDate: metadata.startDate,
