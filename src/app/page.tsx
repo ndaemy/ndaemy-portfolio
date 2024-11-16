@@ -66,7 +66,9 @@ export default function Home() {
         <section id="portfolio-body" className="flex flex-col">
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-2.5">
-              <h2 className="prose prose-2xl font-bold">Skills</h2>
+              <h2 id="skills" className="prose prose-2xl font-bold">
+                Skills
+              </h2>
               <div className="flex flex-col gap-4">
                 {Object.keys(user.skills).map(key => (
                   <BadgesWithTitle
@@ -78,17 +80,23 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <h2 className="prose prose-2xl font-bold">Careers</h2>
+              <h2 id="careers" className="prose prose-2xl font-bold">
+                Careers
+              </h2>
               <div className="divider" />
               <Careers careers={careers} />
             </div>
             <div>
-              <h2 className="prose prose-2xl font-bold">Projects</h2>
+              <h2 id="projects" className="prose prose-2xl font-bold">
+                Projects
+              </h2>
               <div className="divider" />
               <Projects projects={projects} />
             </div>
             <div>
-              <h2 className="prose prose-2xl font-bold">Activities</h2>
+              <h2 id="activities" className="prose prose-2xl font-bold">
+                Activities
+              </h2>
               <div className="divider" />
               <Activities activities={activities} />
             </div>
