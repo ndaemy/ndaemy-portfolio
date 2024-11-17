@@ -5,13 +5,13 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
-import "@/app/ui/globals.css";
+import "@/ui/globals.css";
 import { baseURL, siteMetadata } from "@/resources";
 
 config.autoAddCss = false;
 
 const pretendard = localFont({
-  src: "./fonts/PretendardVariable.woff2",
+  src: "../fonts/PretendardVariable.woff2",
   variable: "--font-pretendard",
   weight: "45 920",
 });
