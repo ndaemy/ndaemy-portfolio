@@ -15,21 +15,25 @@ export default function Home() {
   return (
     <main>
       <div className="flex flex-col gap-12">
-        <section id="portfolio-head" className="flex w-full flex-col gap-2">
-          <div id="metadata" className="flex justify-between">
-            <div>
-              <div>
-                <h1
-                  id="name"
-                  className="mb-3 text-4xl font-bold leading-normal text-primary"
-                >
-                  {user.name}
-                </h1>
-                <h4 id="job-title" className="prose-2xl">
-                  {user.jobTitle}
-                </h4>
-              </div>
-              <div className="divider divider-neutral w-32" />
+        <section
+          id="portfolio-head"
+          className="flex w-full flex-col gap-6 sm:gap-2"
+        >
+          <div
+            id="metadata"
+            className="flex flex-col-reverse items-center justify-between gap-4 sm:flex-row"
+          >
+            <div className="flex flex-col items-center sm:items-start">
+              <h1
+                id="name"
+                className="mb-3 text-4xl font-bold leading-normal text-primary"
+              >
+                {user.name}
+              </h1>
+              <h4 id="job-title" className="prose-2xl">
+                {user.jobTitle}
+              </h4>
+              <div className="divider divider-neutral w-32 self-auto" />
               <div id="links" className="flex items-center gap-4">
                 <a href={`mailto:${user.email}`}>
                   <button className="btn btn-link btn-lg h-fit min-h-0 px-0 py-4">
