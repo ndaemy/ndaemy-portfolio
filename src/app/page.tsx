@@ -1,4 +1,4 @@
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -50,6 +50,17 @@ export default function Home() {
                   <button className="btn btn-link btn-lg h-fit min-h-0 px-0 py-4">
                     <FontAwesomeIcon icon={faGithub} />
                     GitHub
+                  </button>
+                </a>
+                <span>/</span>
+                <a
+                  href={`https://linkedin.com/in/${user.linkedinUsername}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="btn btn-link btn-lg h-fit min-h-0 px-0 py-4">
+                    <FontAwesomeIcon icon={faLinkedin} />
+                    LinkedIn
                   </button>
                 </a>
               </div>
