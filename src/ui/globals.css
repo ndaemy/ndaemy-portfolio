@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  -webkit-print-color-adjust: exact;
+  -webkit-filter: opacity(1);
+}
+
 body {
   font-family: var(--font-pretendard), Arial, Helvetica, sans-serif;
   word-break: keep-all;
