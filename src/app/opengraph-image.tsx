@@ -33,6 +33,7 @@ export default async function Image() {
           justifyContent: "center",
         }}
       >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="https://assets-portfolio.ndaemy.dev/avatar/low.jpg"
           alt="avatar"
