@@ -1,10 +1,16 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
 import { Activities, BadgesWithTitle, Careers, Projects } from "@/components";
-import { getActivities, getCareers, getProjects, user } from "@/resources";
+import {
+  getActivities,
+  getCareers,
+  getProjects,
+  productionOrigin,
+  user,
+} from "@/resources";
 import { capitalizeFirstLetter } from "@/utils";
 
 export default function Home() {
@@ -35,6 +41,18 @@ export default function Home() {
               </h4>
               <div className="divider divider-neutral w-32 self-auto print:hidden" />
               <div id="links" className="flex items-center gap-4">
+                <a
+                  href={productionOrigin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden print:block"
+                >
+                  <button className="btn btn-link btn-lg h-fit min-h-0 px-0 py-4">
+                    <FontAwesomeIcon icon={faGlobe} />
+                    Portfolio
+                  </button>
+                </a>
+                <span className="hidden print:inline">/</span>
                 <a href={`mailto:${user.email}`}>
                   <button className="btn btn-link btn-lg h-fit min-h-0 px-0 py-4">
                     <FontAwesomeIcon icon={faEnvelope} />
