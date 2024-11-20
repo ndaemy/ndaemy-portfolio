@@ -38,3 +38,6 @@ next-env.d.ts
 
 # jetbrain IDE
 /.idea
+
+# exported files
+/dist
