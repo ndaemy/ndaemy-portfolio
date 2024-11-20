@@ -5,8 +5,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
-import "@/ui/globals.css";
 import { productionOrigin, siteMetadata } from "@/resources";
+import "@/ui/globals.css";
 
 config.autoAddCss = false;
 
@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark">
       <body className={`${pretendard.variable} antialiased`}>
-        <div className="mx-10 flex flex-col items-center py-20 *:w-full *:max-w-screen-lg md:mx-14">
+        <div className="mx-10 flex flex-col items-center py-20 *:w-full *:max-w-screen-lg md:mx-14 print:pb-0 print:pt-10">
           {children}
         </div>
         <SpeedInsights />

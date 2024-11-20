@@ -33,7 +33,7 @@ export default function Home() {
               <h4 id="job-title" className="prose-2xl">
                 {user.jobTitle}
               </h4>
-              <div className="divider divider-neutral w-32 self-auto" />
+              <div className="divider divider-neutral w-32 self-auto print:hidden" />
               <div id="links" className="flex items-center gap-4">
                 <a href={`mailto:${user.email}`}>
                   <button className="btn btn-link btn-lg h-fit min-h-0 px-0 py-4">
@@ -98,21 +98,21 @@ export default function Home() {
               <h2 id="careers" className="prose prose-2xl font-bold">
                 Careers
               </h2>
-              <div className="divider" />
+              <div className="divider print:my-0" />
               <Careers careers={careers} />
             </div>
             <div>
               <h2 id="projects" className="prose prose-2xl font-bold">
                 Projects
               </h2>
-              <div className="divider" />
+              <div className="divider print:my-0" />
               <Projects projects={projects} />
             </div>
             <div>
               <h2 id="activities" className="prose prose-2xl font-bold">
                 Activities
               </h2>
-              <div className="divider" />
+              <div className="divider print:my-0" />
               <Activities activities={activities} />
             </div>
           </div>
