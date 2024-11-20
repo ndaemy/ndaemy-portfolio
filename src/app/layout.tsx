@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 import "@/ui/globals.css";
-import { baseURL, siteMetadata } from "@/resources";
+import { productionOrigin, siteMetadata } from "@/resources";
 
 config.autoAddCss = false;
 
@@ -26,7 +26,7 @@ export function generateMetadata(): Metadata {
       title,
       description,
       type: "website",
-      url: `https://${baseURL}`,
+      url: productionOrigin,
     },
   };
 }
