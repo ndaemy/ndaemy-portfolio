@@ -36,8 +36,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { webAppTitle } = siteMetadata;
+
   return (
     <html lang="en" data-theme="dark">
+      <head>
+        <meta name="apple-mobile-web-app-title" content={webAppTitle} />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
       <body className={`${pretendard.variable} antialiased`}>
         <div className="mx-10 flex flex-col items-center py-20 *:w-full *:max-w-screen-lg md:mx-14 print:pb-0 print:pt-10">
           {children}
