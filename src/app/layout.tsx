@@ -39,7 +39,7 @@ export default function RootLayout({
   const { webAppTitle } = siteMetadata;
 
   return (
-    <html lang="en" data-theme="dark">
+    <html lang="ko" data-theme="dark">
       <head>
         <meta name="apple-mobile-web-app-title" content={webAppTitle} />
         <link rel="manifest" href="/site.webmanifest" />
