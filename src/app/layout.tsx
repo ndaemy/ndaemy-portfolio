@@ -16,14 +16,20 @@ const pretendard = localFont({
   weight: "45 920",
 });
 
-export function generateMetadata(): Metadata {
-  const { title, description } = siteMetadata;
+export async function generateMetadata(): Promise<Metadata> {
+  const { title, titleSuffix, description } = siteMetadata;
 
   return {
-    title,
+    title: {
+      default: title,
+      template: `%s${titleSuffix}`,
+    },
     description,
     openGraph: {
-      title,
+      title: {
+        default: title,
+        template: `%s${titleSuffix}`,
+      },
       description,
       type: "website",
       url: productionOrigin,

@@ -1,7 +1,12 @@
+import { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 import Carousel from "@/components/Carousel";
 import { getProject, getProjects } from "@/resources";
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
 
 export async function generateStaticParams() {
   const projects = getProjects();
@@ -11,11 +16,22 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Project({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const slug = (await params).slug;
+  const { name, description, images } = getProject(slug);
+
+  return {
+    title: name,
+    description,
+    openGraph: {
+      title: name,
+      description,
+      images,
+    },
+  };
+}
+
+export default async function Project({ params }: Props) {
   const slug = (await params).slug;
   const project = getProject(slug);
 
