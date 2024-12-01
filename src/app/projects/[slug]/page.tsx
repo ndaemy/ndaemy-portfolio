@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params).slug;
-  const { name, description, images } = getProject(slug);
+  const { name, description, thumbnailImage } = getProject(slug);
 
   return {
     title: name,
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: name,
       description,
-      images,
+      images: [thumbnailImage],
     },
   };
 }
