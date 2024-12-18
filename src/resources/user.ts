@@ -15,9 +15,16 @@ export const user = {
       "CSS-in-JS",
       "Tailwind CSS",
       "Storybook",
-      "Playwright",
     ],
     backend: ["Node.js", "Express", "Koa", "Strapi", "Prisma", "PostgreSQL"],
-    etc: ["Git", "GitHub", "Vercel", "AWS", "Figma", "Google Analytics"],
+    etc: [
+      "Git",
+      "GitHub",
+      "Vercel",
+      "AWS",
+      "Figma",
+      "Google Analytics",
+      "Playwright",
+    ],
   },
 };
