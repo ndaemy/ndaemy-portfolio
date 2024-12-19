@@ -24,6 +24,7 @@ export const user = {
       "AWS",
       "Figma",
       "Google Analytics",
+      "Vitest",
       "Playwright",
     ],
   },
