@@ -35,7 +35,7 @@ export default async function Image() {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://assets-portfolio.ndaemy.dev/avatar/low.jpg"
+          src={user.avatar}
           alt="avatar"
           width={240}
           height={240}
