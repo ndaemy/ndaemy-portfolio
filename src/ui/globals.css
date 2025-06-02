@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --aspect-og: 1.91 / 1;
+}
 
 html {
   -webkit-print-color-adjust: exact;

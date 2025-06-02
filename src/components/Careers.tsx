@@ -11,7 +11,7 @@ export default function Careers({ careers }: CareersProps) {
     <ul className="prose flex max-w-none flex-col gap-4">
       {careers.map(career => (
         <li key={career.slug}>
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-[200px_minmax(0,_1fr)] sm:gap-4 print:block">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-[200px_minmax(0,1fr)] sm:gap-4 print:block">
             <div>
               <h3 className="prose-xl mt-1.5">{career.company}</h3>
               <p className="my-1">{career.position}</p>
