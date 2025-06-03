@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
 import { Activities, BadgesWithTitle, Careers, Projects } from "@/components";
+import { Button } from "@/components/ui/button";
 import {
   getActivities,
   getCareers,
@@ -32,55 +33,51 @@ export default function Home() {
             <div className="flex flex-col items-center sm:items-start">
               <h1
                 id="name"
-                className="mb-3 text-4xl font-bold leading-normal text-primary"
+                className="text-primary mb-3 text-4xl leading-normal font-bold"
               >
                 {user.name}
               </h1>
-              <h4 id="job-title" className="prose-2xl">
+              <h4 id="job-title" className="prose-2xl text-muted-foreground">
                 {user.jobTitle}
               </h4>
-              <div className="divider divider-neutral w-32 self-auto print:hidden" />
-              <div id="links" className="flex items-center gap-4">
-                <a
-                  href={productionOrigin}
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <div id="links" className="mt-4 flex items-center gap-2">
+                <Button
+                  asChild
                   className="hidden print:block"
+                  size="lg"
+                  variant="outline"
                 >
-                  <button className="btn btn-link btn-lg h-fit min-h-0 px-0 py-4">
+                  <a
+                    href={productionOrigin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FontAwesomeIcon icon={faGlobe} />
-                    Portfolio
-                  </button>
-                </a>
-                <span className="hidden print:inline">/</span>
-                <a href={`mailto:${user.email}`}>
-                  <button className="btn btn-link btn-lg h-fit min-h-0 px-0 py-4">
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <a href={`mailto:${user.email}`}>
                     <FontAwesomeIcon icon={faEnvelope} />
-                    Email
-                  </button>
-                </a>
-                <span>/</span>
-                <a
-                  href={`https://github.com/${user.githubUsername}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="btn btn-link btn-lg h-fit min-h-0 px-0 py-4">
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <a
+                    href={`https://github.com/${user.githubUsername}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FontAwesomeIcon icon={faGithub} />
-                    GitHub
-                  </button>
-                </a>
-                <span>/</span>
-                <a
-                  href={`https://linkedin.com/in/${user.linkedinUsername}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="btn btn-link btn-lg h-fit min-h-0 px-0 py-4">
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <a
+                    href={`https://linkedin.com/in/${user.linkedinUsername}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FontAwesomeIcon icon={faLinkedin} />
-                    LinkedIn
-                  </button>
-                </a>
+                  </a>
+                </Button>
               </div>
             </div>
             <Image
@@ -92,7 +89,10 @@ export default function Home() {
               height={160}
             />
           </div>
-          <div id="bio" className="prose prose-xl max-w-full">
+          <div
+            id="bio"
+            className="text-muted-foreground mt-8 max-w-full text-xl font-medium"
+          >
             {user.bio}
           </div>
         </section>
