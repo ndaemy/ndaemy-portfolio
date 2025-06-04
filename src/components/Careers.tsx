@@ -8,7 +8,7 @@ interface CareersProps {
 
 export default function Careers({ careers }: CareersProps) {
   return (
-    <ul className="prose flex max-w-none flex-col gap-4">
+    <ul className="prose prose-zinc dark:prose-invert flex max-w-none flex-col gap-4">
       {careers.map(career => (
         <li key={career.slug}>
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-[200px_minmax(0,1fr)] sm:gap-4 print:block">
@@ -19,7 +19,7 @@ export default function Careers({ careers }: CareersProps) {
                 {career.startDate} - {career.endDate}
               </p>
             </div>
-            <div className="leading-normal prose-p:my-2 prose-ul:mt-0.5 prose-li:my-1">
+            <div className="prose-p:my-2 prose-ul:mt-0.5 prose-li:my-1 leading-normal">
               <MDXRemote
                 source={career.description}
                 components={{
