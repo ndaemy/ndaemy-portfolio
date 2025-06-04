@@ -3,8 +3,10 @@ import { faEnvelope, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
-import { Activities, BadgesWithTitle, Careers, Projects } from "@/components";
+import { Activities, Careers, Projects } from "@/components";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   getActivities,
   getCareers,
@@ -98,36 +100,45 @@ export default function Home() {
         </section>
         <section id="portfolio-body" className="flex flex-col">
           <div className="flex flex-col gap-12">
-            <div className="flex flex-col gap-2.5">
-              <h2 id="skills" className="prose prose-2xl font-bold">
+            <div className="flex flex-col gap-6">
+              <h2 id="skills" className="text-2xl font-bold">
                 Skills
               </h2>
-              <div className="flex flex-col gap-4">
-                {Object.keys(user.skills).map(key => (
-                  <BadgesWithTitle
-                    key={key}
-                    title={capitalizeFirstLetter(key)}
-                    badges={user.skills[key as keyof typeof user.skills]}
-                  />
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                {Object.entries(user.skills).map(([title, skills]) => (
+                  <Card key={title}>
+                    <CardHeader>
+                      <CardTitle>{capitalizeFirstLetter(title)}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex flex-wrap gap-2">
+                        {skills.map(skill => (
+                          <Badge key={skill} variant="secondary">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </div>
             <div>
-              <h2 id="careers" className="prose prose-2xl font-bold">
+              <h2 id="careers" className="text-2xl font-bold">
                 Careers
               </h2>
               <div className="divider print:my-0" />
               <Careers careers={careers} />
             </div>
             <div>
-              <h2 id="projects" className="prose prose-2xl font-bold">
+              <h2 id="projects" className="text-2xl font-bold">
                 Projects
               </h2>
               <div className="divider print:my-0" />
               <Projects projects={projects} />
             </div>
             <div>
-              <h2 id="activities" className="prose prose-2xl font-bold">
+              <h2 id="activities" className="text-2xl font-bold">
                 Activities
               </h2>
               <div className="divider print:my-0" />
