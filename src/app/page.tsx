@@ -123,11 +123,10 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div>
+            <div className="flex flex-col gap-6">
               <h2 id="careers" className="text-2xl font-bold">
                 Careers
               </h2>
-              <div className="divider print:my-0" />
               <Careers careers={careers} />
             </div>
             <div className="flex flex-col gap-6">
@@ -136,11 +135,10 @@ export default function Home() {
               </h2>
               <Projects projects={projects} />
             </div>
-            <div>
+            <div className="flex flex-col gap-6">
               <h2 id="activities" className="text-2xl font-bold">
                 Activities
               </h2>
-              <div className="divider print:my-0" />
               <Activities activities={activities} />
             </div>
           </div>
