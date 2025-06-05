@@ -130,11 +130,10 @@ export default function Home() {
               <div className="divider print:my-0" />
               <Careers careers={careers} />
             </div>
-            <div>
+            <div className="flex flex-col gap-6">
               <h2 id="projects" className="text-2xl font-bold">
                 Projects
               </h2>
-              <div className="divider print:my-0" />
               <Projects projects={projects} />
             </div>
             <div>

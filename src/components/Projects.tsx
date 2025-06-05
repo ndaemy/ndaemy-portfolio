@@ -1,6 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import type { Project } from "@/resources/projects";
 
 interface ProjectsProps {
@@ -9,40 +17,42 @@ interface ProjectsProps {
 
 export default function Projects({ projects }: ProjectsProps) {
   return (
-    <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+    <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {projects.map(project => (
         <li key={project.slug}>
           <Link href={`/projects/${project.slug}`}>
-            <div className="card bg-[oklch(27.4%_0.018_251.71)] shadow-xl transition hover:scale-105">
-              <figure className="relative aspect-og">
-                <Image
-                  src={project.thumbnailImage}
-                  alt={`${project.name} Image`}
-                  fill
-                  sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="overflow-hidden object-cover"
-                />
-              </figure>
-              <div className="card-body flex flex-col gap-3">
-                <h3 className="card-title flex-wrap text-white">
+            <Card>
+              <CardHeader>
+                <div className="aspect-og relative mb-4 w-full">
+                  <Image
+                    src={project.thumbnailImage}
+                    alt={`${project.name} Image`}
+                    fill
+                    sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="overflow-hidden rounded-md object-cover"
+                  />
+                </div>
+                <CardTitle className="flex items-center gap-2">
                   {project.name}
-                  {project.type === "Idea" && (
-                    <div className="badge badge-neutral">Idea only</div>
-                  )}
                   {!project.endDate && (
-                    <div className="badge badge-accent">Ongoing</div>
+                    <Badge className="badge badge-accent">Ongoing</Badge>
                   )}
-                </h3>
-                <p>{project.description}</p>
-                <div className="card-actions justify-end pt-2">
+                  {project.type === "Idea" && (
+                    <Badge variant="secondary">Idea only</Badge>
+                  )}
+                </CardTitle>
+                <CardDescription>{project.description}</CardDescription>
+              </CardHeader>
+              <CardFooter className="flex flex-col items-start gap-2">
+                <div className="flex flex-wrap gap-2">
                   {project.positions.map(position => (
-                    <div key={position} className="badge badge-outline">
+                    <Badge key={position} variant="outline">
                       {position}
-                    </div>
+                    </Badge>
                   ))}
                 </div>
-              </div>
-            </div>
+              </CardFooter>
+            </Card>
           </Link>
         </li>
       ))}
