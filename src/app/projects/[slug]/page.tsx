@@ -1,7 +1,14 @@
 import { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
-import Carousel from "@/components/Carousel";
+import { Badge } from "@/components/ui/badge";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { getProject, getProjects } from "@/resources";
 
 type Props = {
@@ -36,13 +43,30 @@ export default async function Project({ params }: Props) {
   const project = getProject(slug);
 
   return (
-    <main className="prose flex flex-col items-center gap-12">
+    <main className="flex flex-col items-center gap-12">
       {project.images && (
-        <Carousel imageUrls={project.images} className="not-prose h-96 w-3/4" />
+        <Carousel className="mx-6 md:mx-2">
+          <CarouselContent>
+            {project.images.map(image => (
+              <CarouselItem
+                key={image}
+                className="basis-7/8 md:basis-3/4 lg:basis-2/3"
+              >
+                <img
+                  src={image}
+                  alt={project.name}
+                  className="rounded-lg object-contain md:rounded-xl"
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       )}
       <div className="flex w-full flex-col gap-4">
         <h1 className="prose-2xl mb-0 text-4xl font-bold">{project.name}</h1>
-        <p className="prose-lg mt-0 text-xl text-base-content/80">
+        <p className="prose-lg text-base-content/80 mt-0 text-xl">
           {project.description}
         </p>
         <div className="flex flex-col gap-3">
@@ -60,9 +84,9 @@ export default async function Project({ params }: Props) {
             <span className="font-semibold">역할:</span>
             <div className="flex flex-wrap gap-x-2 gap-y-1">
               {project.positions.map(position => (
-                <span key={position} className="badge badge-neutral my-1">
+                <Badge key={position} variant="outline">
                   {position}
-                </span>
+                </Badge>
               ))}
             </div>
           </div>
@@ -71,9 +95,9 @@ export default async function Project({ params }: Props) {
               <span className="font-semibold">사용 기술:</span>
               <div className="flex flex-wrap gap-x-2 gap-y-1">
                 {project.technologies.map(tech => (
-                  <span key={tech} className="badge badge-neutral my-1">
+                  <Badge key={tech} variant="secondary">
                     {tech}
-                  </span>
+                  </Badge>
                 ))}
               </div>
             </div>
@@ -81,7 +105,9 @@ export default async function Project({ params }: Props) {
         </div>
       </div>
 
-      <MDXRemote source={project.content} />
+      <div className="prose prose-zinc dark:prose-invert w-full">
+        <MDXRemote source={project.content} />
+      </div>
     </main>
   );
 }
