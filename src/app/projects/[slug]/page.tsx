@@ -105,7 +105,7 @@ export default async function Project({ params }: Props) {
         </div>
       </div>
 
-      <div className="prose prose-zinc dark:prose-invert w-full">
+      <div className="prose prose-zinc dark:prose-invert w-full max-w-full">
         <MDXRemote source={project.content} />
       </div>
     </main>
