@@ -23,7 +23,7 @@ export default async function Image() {
     (
       <div
         style={{
-          background: "#1d232a",
+          background: "#09090b",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -33,7 +33,7 @@ export default async function Image() {
           justifyContent: "center",
         }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
+        {}
         <img
           src={user.avatar}
           alt="avatar"
@@ -50,10 +50,10 @@ export default async function Image() {
             alignItems: "center",
           }}
         >
-          <p style={{ color: "#e5e7eb", fontSize: 84, fontWeight: 700 }}>
+          <p style={{ color: "#e4e4e7", fontSize: 84, fontWeight: 700 }}>
             {user.name}
           </p>
-          <p style={{ color: "#6b7280", fontSize: 48, fontWeight: 500 }}>
+          <p style={{ color: "#9f9fa9", fontSize: 60, fontWeight: 500 }}>
             {user.jobTitle}
           </p>
         </div>
