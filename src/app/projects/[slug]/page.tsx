@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 import { Badge } from "@/components/ui/badge";
@@ -49,13 +50,16 @@ export default async function Project({ params }: Props) {
           <CarouselContent>
             {project.images.map(image => (
               <CarouselItem
-                key={image}
+                key={image.url}
                 className="basis-7/8 md:basis-3/4 lg:basis-2/3"
               >
-                <img
-                  src={image}
+                <Image
+                  src={image.url}
                   alt={project.name}
+                  width={image.width}
+                  height={image.height}
                   className="rounded-lg object-contain md:rounded-xl"
+                  sizes="(min-width: 1024px) 66vw, (min-width: 768px) 75vw, 88vw"
                 />
               </CarouselItem>
             ))}

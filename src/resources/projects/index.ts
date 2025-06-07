@@ -15,7 +15,7 @@ export interface Project {
   endDate?: string;
   demoUrl?: string;
   thumbnailImage: string;
-  images?: string[];
+  images?: { url: string; width: number; height: number }[];
   content: string;
 }
 
