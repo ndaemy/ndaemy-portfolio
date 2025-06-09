@@ -10,6 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { getStatus } from "@/lib/text-parse";
 import { getProject, getProjects } from "@/resources";
 
 type Props = {
@@ -80,6 +81,12 @@ export default async function Project({ params }: Props) {
           {project.description}
         </p>
         <div className="flex flex-col gap-3">
+          {project.status && (
+            <div className="flex items-center gap-2">
+              <span className="font-semibold">상태:</span>
+              {getStatus(project.status)}
+            </div>
+          )}
           <div className="flex items-center gap-2">
             <span className="font-semibold">기간:</span>
             <span>{project.startDate}</span>

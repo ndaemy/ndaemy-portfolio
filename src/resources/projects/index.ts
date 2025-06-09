@@ -9,6 +9,8 @@ export interface Project {
   slug: string;
   description: string;
   type: "Development" | "Idea";
+  // Active: 운영중 / Legacy: 서비스 접속은 가능하지만 유지보수하고 있지 않음 / Discontinued: 서비스 종료됨
+  status?: "Active" | "Legacy" | "Discontinued";
   technologies?: string[];
   positions: string[];
   startDate: string;
@@ -32,6 +34,7 @@ export function getProjects(): Project[] {
     slug,
     description: metadata.description,
     type: metadata.type,
+    status: metadata.status,
     technologies: metadata.technologies,
     positions: metadata.positions,
     startDate: metadata.startDate,
@@ -53,6 +56,7 @@ export function getProject(slug: string): Project {
     slug,
     description: metadata.description,
     type: metadata.type,
+    status: metadata.status,
     technologies: metadata.technologies,
     positions: metadata.positions,
     startDate: metadata.startDate,
