@@ -70,7 +70,12 @@ export default async function Project({ params }: Props) {
         </Carousel>
       )}
       <div className="flex w-full flex-col gap-4">
-        <h1 className="prose-2xl mb-0 text-4xl font-bold">{project.name}</h1>
+        <span className="flex items-start gap-2">
+          <h1 className="prose-2xl mb-0 text-4xl font-bold">{project.name}</h1>
+          {project.type === "Idea" && (
+            <Badge variant="secondary">Idea only</Badge>
+          )}
+        </span>
         <p className="prose-lg text-base-content/80 mt-0 text-xl">
           {project.description}
         </p>
