@@ -45,7 +45,7 @@ export default async function Project({ params }: Props) {
   const project = getProject(slug);
 
   return (
-    <main className="flex flex-col items-center gap-12">
+    <main className="my-4 flex flex-col items-center gap-12">
       {project.images && (
         <Carousel className="mx-6 md:mx-2">
           <CarouselContent>
