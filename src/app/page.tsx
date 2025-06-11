@@ -3,8 +3,7 @@ import { faEnvelope, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
-import { Activities, Careers, Projects } from "@/components";
-import Header from "@/components/Header";
+import { Activities, Careers, Header, Projects } from "@/components";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
