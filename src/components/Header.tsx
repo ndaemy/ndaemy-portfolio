@@ -25,10 +25,10 @@ export default function Header() {
     <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="sm:bg-background/60 sticky top-2 z-20 inline-flex w-fit! items-center gap-2 sm:top-10 sm:mb-10 sm:rounded-full sm:border sm:px-2 sm:py-3 sm:backdrop-blur-sm"
+      className="bg-background/60 sticky top-10 z-20 mb-10 inline-flex w-fit! items-center gap-2 rounded-full border px-2 py-3 backdrop-blur-sm"
     >
-      <nav className="text-muted-foreground hidden text-sm sm:block">
-        <ul className="flex gap-5">
+      <nav className="text-muted-foreground text-sm">
+        <ul className="flex sm:gap-5">
           {sections.map(({ name, hash }) => (
             <li key={name}>
               <Link
