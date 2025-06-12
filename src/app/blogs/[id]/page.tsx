@@ -1,6 +1,6 @@
-import { notFound } from "next/navigation";
+import { notFound } from 'next/navigation';
 
-import { getBlogPost, getBlogPosts } from "@/resources/blogs";
+import { getBlogPost, getBlogPosts } from '@/resources/blogs';
 
 type Props = {
   params: Promise<{ id: string }>;

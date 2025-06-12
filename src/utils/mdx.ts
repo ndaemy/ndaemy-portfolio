@@ -1,6 +1,6 @@
-import fs, { type PathLike } from "fs";
-import matter from "gray-matter";
-import path from "path";
+import fs, { type PathLike } from 'fs';
+import matter from 'gray-matter';
+import path from 'path';
 
 interface MDXData {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -19,7 +19,7 @@ function getMDXFilenames(dir: PathLike): string[] {
     throw new Error(`Directory not found: ${dir}`);
   }
 
-  return fs.readdirSync(dir).filter(file => path.extname(file) === ".mdx");
+  return fs.readdirSync(dir).filter(file => path.extname(file) === '.mdx');
 }
 
 function readMDXFile(filePath: PathLike) {
@@ -27,7 +27,7 @@ function readMDXFile(filePath: PathLike) {
     throw new Error(`File not found: ${filePath}`);
   }
 
-  const rawContent = fs.readFileSync(filePath, "utf-8");
+  const rawContent = fs.readFileSync(filePath, 'utf-8');
   return matter(rawContent);
 }
 

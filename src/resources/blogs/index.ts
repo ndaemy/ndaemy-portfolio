@@ -1,7 +1,7 @@
-import { fileURLToPath } from "node:url";
-import path from "path";
+import { fileURLToPath } from 'node:url';
+import path from 'path';
 
-import { getMDXDataInDir, sha256 } from "@/utils";
+import { getMDXDataInDir, sha256 } from '@/utils';
 
 export interface BlogPost {
   title: string;

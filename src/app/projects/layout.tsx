@@ -1,4 +1,4 @@
-import PageNavigator from "@/components/PageNavigator";
+import PageNavigator from '@/components/PageNavigator';
 
 export default function Projects({
   children,

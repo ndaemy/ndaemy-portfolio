@@ -1,19 +1,19 @@
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 
-import { productionOrigin, siteMetadata } from "@/resources";
-import "@/ui/globals.css";
+import { productionOrigin, siteMetadata } from '@/resources';
+import '@/ui/globals.css';
 
 config.autoAddCss = false;
 
 const pretendard = localFont({
-  src: "../fonts/PretendardVariable.woff2",
-  variable: "--font-pretendard",
-  weight: "45 920",
+  src: '../fonts/PretendardVariable.woff2',
+  variable: '--font-pretendard',
+  weight: '45 920',
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -31,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
         template: `%s${titleSuffix}`,
       },
       description,
-      type: "website",
+      type: 'website',
       url: productionOrigin,
     },
   };
@@ -45,13 +45,13 @@ export default function RootLayout({
   const { webAppTitle } = siteMetadata;
 
   return (
-    <html lang="ko" data-theme="dark">
+    <html lang='ko' data-theme='dark'>
       <head>
-        <meta name="apple-mobile-web-app-title" content={webAppTitle} />
-        <link rel="manifest" href="/site.webmanifest" />
+        <meta name='apple-mobile-web-app-title' content={webAppTitle} />
+        <link rel='manifest' href='/site.webmanifest' />
       </head>
       <body className={`${pretendard.variable} dark antialiased`}>
-        <div className="mx-10 flex flex-col items-center py-10 *:w-full *:max-w-(--breakpoint-lg) md:mx-14 print:pt-10 print:pb-0">
+        <div className='mx-10 flex flex-col items-center py-10 *:w-full *:max-w-(--breakpoint-lg) md:mx-14 print:pt-10 print:pb-0'>
           {children}
         </div>
         <SpeedInsights />
