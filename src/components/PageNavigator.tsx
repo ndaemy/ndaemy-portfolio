@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function PageNavigator() {
   return (
-    <div className='sm:bg-background/60 fixed top-2 z-20 inline-flex w-fit! items-center gap-2 sm:top-10 sm:mb-10 sm:rounded-full sm:border sm:px-2 sm:py-3 sm:backdrop-blur-sm'>
+    <div className='bg-background/60 sticky top-10 z-20 mb-2 inline-flex w-fit! items-center gap-2 rounded-full border px-2 py-3 backdrop-blur-sm'>
       <nav className='text-muted-foreground text-sm'>
         <Link
           href='/'
