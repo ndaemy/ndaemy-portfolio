@@ -1,11 +1,8 @@
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 
 import { Activities, Careers, Header, Projects } from '@/components';
+import SocialButtons from '@/components/SocialButtons';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   getActivities,
@@ -44,45 +41,12 @@ export default function Home() {
                 <h4 id='job-title' className='prose-2xl text-muted-foreground'>
                   {user.jobTitle}
                 </h4>
-                <div id='links' className='mt-4 flex items-center gap-2'>
-                  <Button
-                    asChild
-                    className='hidden print:block'
-                    size='lg'
-                    variant='outline'
-                  >
-                    <a
-                      href={productionOrigin}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      <FontAwesomeIcon icon={faGlobe} />
-                    </a>
-                  </Button>
-                  <Button asChild size='lg' variant='outline'>
-                    <a href={`mailto:${user.email}`}>
-                      <FontAwesomeIcon icon={faEnvelope} />
-                    </a>
-                  </Button>
-                  <Button asChild size='lg' variant='outline'>
-                    <a
-                      href={`https://github.com/${user.githubUsername}`}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      <FontAwesomeIcon icon={faGithub} />
-                    </a>
-                  </Button>
-                  <Button asChild size='lg' variant='outline'>
-                    <a
-                      href={`https://linkedin.com/in/${user.linkedinUsername}`}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      <FontAwesomeIcon icon={faLinkedin} />
-                    </a>
-                  </Button>
-                </div>
+                <SocialButtons
+                  productionOrigin={productionOrigin}
+                  email={user.email}
+                  githubUsername={user.githubUsername}
+                  linkedinUsername={user.linkedinUsername}
+                />
               </div>
               <Image
                 id='avatar'
