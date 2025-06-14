@@ -2,11 +2,11 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 
 import type { Activity } from '@/resources';
 
-interface ActivitiesProps {
+interface Props {
   activities: Activity[];
 }
 
-export default function Activities({ activities }: ActivitiesProps) {
+export default function Activities({ activities }: Props) {
   return (
     <ul className='prose prose-zinc dark:prose-invert flex max-w-none flex-col gap-4'>
       {activities.map(activity => (

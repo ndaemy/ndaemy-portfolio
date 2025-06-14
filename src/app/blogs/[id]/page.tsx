@@ -2,9 +2,9 @@ import { notFound } from 'next/navigation';
 
 import { getBlogPost, getBlogPosts } from '@/resources/blogs';
 
-type Props = {
+interface Props {
   params: Promise<{ id: string }>;
-};
+}
 
 export const dynamicParams = false;
 

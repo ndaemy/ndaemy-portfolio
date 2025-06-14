@@ -11,11 +11,11 @@ import {
 } from '@/components/ui/card';
 import type { Project } from '@/resources/projects';
 
-interface ProjectsProps {
+interface Props {
   projects: Project[];
 }
 
-export default function Projects({ projects }: ProjectsProps) {
+export default function Projects({ projects }: Props) {
   return (
     <ul className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
       {projects.map(project => (

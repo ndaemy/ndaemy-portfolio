@@ -2,11 +2,11 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 
 import type { Career } from '@/resources/careers';
 
-interface CareersProps {
+interface Props {
   careers: Career[];
 }
 
-export default function Careers({ careers }: CareersProps) {
+export default function Careers({ careers }: Props) {
   return (
     <ul className='prose prose-zinc dark:prose-invert flex max-w-none flex-col gap-4'>
       {careers.map(career => (
