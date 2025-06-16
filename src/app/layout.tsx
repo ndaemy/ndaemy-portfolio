@@ -57,6 +57,22 @@ export default function RootLayout({
         </div>
         <Toaster />
         <SpeedInsights />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // hash 값이 있을 경우 hash를 가진 element로 scroll
+              (function() {
+                const hash = window.location.hash;
+                if (hash) {
+                  const el = document.querySelector(hash);
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }
+              })();
+            `,
+          }}
+        />
       </body>
       <Analytics />
     </html>
