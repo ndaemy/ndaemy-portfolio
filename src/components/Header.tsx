@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -20,6 +20,36 @@ type SectionName = (typeof sections)[number]['name'];
  */
 export default function Header() {
   const [activeSection, setActiveSection] = useState<SectionName>('Home');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            const matched = sections.find(s => s.hash === `#${id}`);
+            if (matched) {
+              setActiveSection(matched.name);
+            }
+          }
+        }
+      },
+      {
+        rootMargin: '0px 0px -80%',
+        threshold: 0,
+      },
+    );
+
+    const targets = sections
+      .map(s => document.querySelector(s.hash))
+      .filter(Boolean) as Element[];
+
+    targets.forEach(el => observer.observe(el));
+
+    return () => {
+      targets.forEach(el => observer.unobserve(el));
+    };
+  }, []);
 
   return (
     <motion.header

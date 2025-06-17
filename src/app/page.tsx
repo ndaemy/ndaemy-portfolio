@@ -66,10 +66,8 @@ export default function Home() {
           </section>
           <section id='portfolio-body' className='flex flex-col'>
             <div className='flex flex-col gap-12'>
-              <div className='flex flex-col gap-6'>
-                <h2 id='skills' className='text-2xl font-bold'>
-                  Skills
-                </h2>
+              <div className='flex flex-col gap-6' id='skills'>
+                <h2 className='text-2xl font-bold'>Skills</h2>
                 <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
                   {Object.entries(user.skills).map(([title, skills]) => (
                     <Card key={title}>
@@ -89,22 +87,16 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <div className='flex flex-col gap-6'>
-                <h2 id='careers' className='text-2xl font-bold'>
-                  Careers
-                </h2>
+              <div className='flex flex-col gap-6' id='careers'>
+                <h2 className='text-2xl font-bold'>Careers</h2>
                 <Careers careers={careers} />
               </div>
-              <div className='flex flex-col gap-6'>
-                <h2 id='projects' className='text-2xl font-bold'>
-                  Projects
-                </h2>
+              <div className='flex flex-col gap-6' id='projects'>
+                <h2 className='text-2xl font-bold'>Projects</h2>
                 <Projects projects={projects} />
               </div>
-              <div className='flex flex-col gap-6'>
-                <h2 id='activities' className='text-2xl font-bold'>
-                  Activities
-                </h2>
+              <div className='flex flex-col gap-6' id='activities'>
+                <h2 className='text-2xl font-bold'>Activities</h2>
                 <Activities activities={activities} />
               </div>
             </div>
