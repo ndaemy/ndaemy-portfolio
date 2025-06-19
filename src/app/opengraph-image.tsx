@@ -35,13 +35,13 @@ export default async function Image() {
       >
         {}
         <img
-          src={user.avatar}
           alt='avatar'
-          width={240}
           height={240}
+          src={user.avatar}
           style={{
             borderRadius: '50%',
           }}
+          width={240}
         />
         <div
           style={{

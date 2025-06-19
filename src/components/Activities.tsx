@@ -18,12 +18,12 @@ export default function Activities({ activities }: Props) {
             </div>
             <div className='prose-p:my-2 prose-ul:mt-0.5 prose-li:my-1 leading-normal'>
               <MDXRemote
-                source={activity.description}
                 components={{
                   h4: ({ children }) => (
                     <h4 className='first-of-type:mt-2'>{children}</h4>
                   ),
                 }}
+                source={activity.description}
               />
             </div>
           </div>

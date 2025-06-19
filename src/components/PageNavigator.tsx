@@ -5,8 +5,8 @@ export default function PageNavigator() {
     <div className='bg-background/60 sticky top-10 z-20 mb-2 inline-flex w-fit! items-center gap-2 rounded-full border px-2 py-3 backdrop-blur-sm'>
       <nav className='text-muted-foreground text-sm'>
         <Link
-          href='/'
           className='hover:text-foreground px-4 py-2 transition-colors'
+          href='/'
         >
           메인페이지로 돌아가기
         </Link>

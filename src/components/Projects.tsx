@@ -20,16 +20,16 @@ export default function Projects({ projects }: Props) {
     <ul className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
       {projects.map(project => (
         <li key={project.slug}>
-          <Link href={`/projects/${project.slug}`} className='h-full'>
+          <Link className='h-full' href={`/projects/${project.slug}`}>
             <Card className='h-full justify-between'>
               <CardHeader>
                 <div className='aspect-og relative mb-4 w-full'>
                   <Image
-                    src={project.thumbnailImage}
                     alt={`${project.name} Image`}
+                    className='overflow-hidden rounded-md object-cover'
                     fill
                     sizes='(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw'
-                    className='overflow-hidden rounded-md object-cover'
+                    src={project.thumbnailImage}
                   />
                 </div>
                 <CardTitle className='flex items-center gap-2'>

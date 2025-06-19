@@ -38,6 +38,13 @@ const eslintConfig = [
           ],
         },
       ],
+      'react/jsx-sort-props': [
+        'error',
+        {
+          callbacksLast: true,
+          reservedFirst: true,
+        },
+      ],
     },
   },
 ];

@@ -24,47 +24,47 @@ export default function Home() {
       <main className='my-4 sm:my-0'>
         <div className='flex flex-col gap-12'>
           <section
-            id='portfolio-head'
             className='flex w-full flex-col gap-6 sm:gap-2'
+            id='portfolio-head'
           >
             <div
-              id='metadata'
               className='flex flex-col-reverse items-center justify-between gap-4 sm:flex-row'
+              id='metadata'
             >
               <div className='flex flex-col items-center sm:items-start'>
                 <h1
-                  id='name'
                   className='text-primary mb-3 text-4xl leading-normal font-bold'
+                  id='name'
                 >
                   {user.name}
                 </h1>
-                <h4 id='job-title' className='prose-2xl text-muted-foreground'>
+                <h4 className='prose-2xl text-muted-foreground' id='job-title'>
                   {user.jobTitle}
                 </h4>
                 <SocialButtons
-                  productionOrigin={productionOrigin}
                   email={user.email}
                   githubUsername={user.githubUsername}
                   linkedinUsername={user.linkedinUsername}
+                  productionOrigin={productionOrigin}
                 />
               </div>
               <Image
-                id='avatar'
-                src={user.avatar}
                 alt='avatar'
                 className='size-40 rounded-full'
-                width={160}
                 height={160}
+                id='avatar'
+                src={user.avatar}
+                width={160}
               />
             </div>
             <div
-              id='bio'
               className='text-muted-foreground mt-8 max-w-full text-xl font-medium'
+              id='bio'
             >
               {user.bio}
             </div>
           </section>
-          <section id='portfolio-body' className='flex flex-col'>
+          <section className='flex flex-col' id='portfolio-body'>
             <div className='flex flex-col gap-12'>
               <div className='flex flex-col gap-6' id='skills'>
                 <h2 className='text-2xl font-bold'>Skills</h2>

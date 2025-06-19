@@ -55,14 +55,14 @@ export default async function Project({ params }: Props) {
                 className='basis-7/8 md:basis-3/4 lg:basis-2/3'
               >
                 <Image
-                  src={image.url}
                   alt={project.name}
-                  width={image.width}
-                  height={image.height}
                   className='rounded-lg object-contain md:rounded-xl'
-                  sizes='(min-width: 1024px) 66vw, (min-width: 768px) 75vw, 88vw'
+                  height={image.height}
                   placeholder='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMScgaGVpZ2h0PScxJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxyZWN0IHdpZHRoPScxJyBoZWlnaHQ9JzEnIGZpbGw9JyMxODE4MWInLz48L3N2Zz4='
                   quality={100}
+                  sizes='(min-width: 1024px) 66vw, (min-width: 768px) 75vw, 88vw'
+                  src={image.url}
+                  width={image.width}
                 />
               </CarouselItem>
             ))}

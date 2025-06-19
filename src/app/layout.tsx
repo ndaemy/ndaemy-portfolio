@@ -46,10 +46,10 @@ export default function RootLayout({
   const { webAppTitle } = siteMetadata;
 
   return (
-    <html lang='ko' data-theme='dark'>
+    <html data-theme='dark' lang='ko'>
       <head>
-        <meta name='apple-mobile-web-app-title' content={webAppTitle} />
-        <link rel='manifest' href='/site.webmanifest' />
+        <meta content={webAppTitle} name='apple-mobile-web-app-title' />
+        <link href='/site.webmanifest' rel='manifest' />
       </head>
       <body className={`${pretendard.variable} dark antialiased`}>
         <div className='mx-10 flex flex-col items-center py-10 *:w-full *:max-w-(--breakpoint-lg) md:mx-14 print:pt-10 print:pb-0'>

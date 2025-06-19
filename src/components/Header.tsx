@@ -53,20 +53,20 @@ export default function Header() {
 
   return (
     <motion.header
-      initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       className='bg-background/60 sticky top-10 z-20 mb-10 inline-flex w-fit! items-center gap-2 rounded-full border px-2 py-3 backdrop-blur-sm'
+      initial={{ y: -100, opacity: 0 }}
     >
       <nav className='text-muted-foreground text-sm'>
         <ul className='flex sm:gap-5'>
           {sections.map(({ name, hash }) => (
             <li key={name}>
               <Link
-                href={hash}
                 className={cn(
                   'hover:text-foreground relative px-4 py-2 transition-colors',
                   name === activeSection && 'text-foreground',
                 )}
+                href={hash}
                 onClick={() => setActiveSection(name)}
               >
                 {name}

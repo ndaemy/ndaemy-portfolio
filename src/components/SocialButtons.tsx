@@ -35,14 +35,14 @@ export default function SocialButtons({
   };
 
   return (
-    <div id='links' className='mt-4 flex items-center gap-2'>
+    <div className='mt-4 flex items-center gap-2' id='links'>
       <Button
         asChild
         className='hidden print:block'
         size='lg'
         variant='outline'
       >
-        <a href={productionOrigin} target='_blank' rel='noopener noreferrer'>
+        <a href={productionOrigin} rel='noopener noreferrer' target='_blank'>
           <FontAwesomeIcon icon={faGlobe} />
         </a>
       </Button>
@@ -59,7 +59,7 @@ export default function SocialButtons({
           >
             이메일 주소 복사하기
           </DropdownMenuItem>
-          <DropdownMenuItem className='cursor-pointer px-3 text-base' asChild>
+          <DropdownMenuItem asChild className='cursor-pointer px-3 text-base'>
             <a href={`mailto:${email}`}>이메일 보내기</a>
           </DropdownMenuItem>
         </DropdownMenuContent>
@@ -67,8 +67,8 @@ export default function SocialButtons({
       <Button asChild size='lg' variant='outline'>
         <a
           href={`https://github.com/${githubUsername}`}
-          target='_blank'
           rel='noopener noreferrer'
+          target='_blank'
         >
           <FontAwesomeIcon icon={faGithub} />
         </a>
@@ -76,8 +76,8 @@ export default function SocialButtons({
       <Button asChild size='lg' variant='outline'>
         <a
           href={`https://linkedin.com/in/${linkedinUsername}`}
-          target='_blank'
           rel='noopener noreferrer'
+          target='_blank'
         >
           <FontAwesomeIcon icon={faLinkedin} />
         </a>
