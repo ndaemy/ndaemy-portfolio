@@ -4,6 +4,12 @@ import path from 'path';
 
 import { getMDXDataFromFile, getMDXDataInDir } from '@/utils';
 
+interface ServiceUrls {
+  web?: string;
+  ios?: string;
+  android?: string;
+}
+
 export interface Project {
   name: string;
   slug: string;
@@ -15,7 +21,7 @@ export interface Project {
   positions: string[];
   startDate: string;
   endDate?: string;
-  demoUrl?: string;
+  serviceUrls?: ServiceUrls;
   thumbnailImage: string;
   images?: { url: string; width: number; height: number }[];
   content: string;
@@ -61,7 +67,7 @@ export function getProject(slug: string): Project {
     positions: metadata.positions,
     startDate: metadata.startDate,
     endDate: metadata.endDate,
-    demoUrl: metadata.demoUrl,
+    serviceUrls: metadata.serviceUrls,
     thumbnailImage: metadata.thumbnailImage,
     images: metadata.images,
     content,

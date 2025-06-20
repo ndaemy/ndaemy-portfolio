@@ -1,8 +1,12 @@
+import { faAndroid, faApple } from '@fortawesome/free-brands-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import {
   Carousel,
   CarouselContent,
@@ -39,6 +43,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   };
 }
+
+const serviceIcons = {
+  web: faGlobe,
+  ios: faApple,
+  android: faAndroid,
+} as const;
 
 export default async function Project({ params }: Props) {
   const slug = (await params).slug;
@@ -116,6 +126,25 @@ export default async function Project({ params }: Props) {
                   <Badge key={tech} variant='secondary'>
                     {tech}
                   </Badge>
+                ))}
+              </div>
+            </div>
+          )}
+          {project.serviceUrls && (
+            <div className='grid grid-cols-[max-content_1fr] gap-2'>
+              <span className='font-semibold'>서비스 링크:</span>
+              <div className='flex flex-wrap gap-x-2 gap-y-1'>
+                {Object.entries(project.serviceUrls).map(([service, url]) => (
+                  <Button key={service} asChild size='icon' variant='outline'>
+                    <a href={url} rel='noopener noreferrer' target='_blank'>
+                      <FontAwesomeIcon
+                        icon={
+                          serviceIcons[service as 'web' | 'ios' | 'android'] ||
+                          faGlobe
+                        }
+                      />
+                    </a>
+                  </Button>
                 ))}
               </div>
             </div>
